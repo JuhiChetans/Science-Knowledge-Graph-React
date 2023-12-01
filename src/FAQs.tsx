@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function FAQs() {
   const [selectedIndex, setSelectedIndex] = useState();
@@ -11,13 +11,13 @@ function FAQs() {
     "4. What are research weakness of the department? (We can hire more people in those fields).",
     "5. Research faculty working in field X and Y (X or Y), faculty working in multiple areas.",
   ];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 
   const handleQuestionSelect = (index: number) => {
     console.log("Selected question: ", index + 1);
     const queNo = index+1;
-    navigate(`/graph/${queNo}`);
+    // navigate(`/graph/${queNo}`);
   };
 
   return (

@@ -39,7 +39,7 @@ import FAQs from "./FAQs";
 import {
   Route,
   BrowserRouter as Router,
-  Routes,
+  // Routes,
   useParams,
 } from "react-router-dom";
 import Graph from "./Graph";
@@ -50,14 +50,14 @@ const queNo = '';
 const App: React.FC = () => {
   return (
     <div className="App">
-      {/* <Router>
-        <FAQs />
-      </Router> */}
+      {/* <Router> */}
+        {/* <FAQs /> */}
+      {/* </Router> */}
 
       
       {/* <Routes>
         <Route path="/graph/:queNo" element={<Graph queNo={queNo} />} />
-      </Routes> */}
+      </Routes>  */}
 
       <Graph />
     </div>

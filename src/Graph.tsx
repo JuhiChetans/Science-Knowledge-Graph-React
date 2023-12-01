@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import vis, { DataSet, Edge, Network, Node, Options } from "vis";
 import { runQuery } from "./neo4jHelper";
 import { Integer } from "neo4j-driver";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 // interface Props {
 //   queNo: string;
