@@ -1,67 +1,54 @@
-// import React, { useEffect, useState} from "react";
-// import * as vis from "vis";
-// import { fetchGraphData } from "./utils/fetchGraphData.";
-// import ForceGraph2D from 'react-force-graph-2d';
-// // import { DataSet, Network } from "react-vis-network";
-// import { DataSet, Network } from "vis";
-
-// function App( ) {
-//   // change the datatypes of nodes and links to be any[]
-
-//   const [graphData, setGraphData] = useState({nodes: [], links: []});
-
-//   useEffect(() => {
-//     const fetcchAndSetData = async() => {
-//       const data = await fetchGraphData();
-//       setGraphData(data);
-//       }
-//       fetcchAndSetData();
-//     }, []);
-
-//   return (
-//     <div className="App">
-//       <ForceGraph2D graphData={graphData}
-//                     nodeLabel="id"
-//                     linkDirectionalArrowLength={3.5}
-//                     linkDirectionalArrowRelPos={1}
-//                     linkCurvature={0.25}>
-
-//       </ForceGraph2D>
-//     </div>
-//   );
-// };
-// export default App;
-
-import React from "react";
-import { useState } from "react";
-// import Graph from "./Graph";
-import FAQs from "./FAQs";
+import React, { useEffect } from "react";
 import {
-  Route,
   BrowserRouter as Router,
-  // Routes,
-  useParams,
+  Route,
+  Switch,
+  useLocation,
 } from "react-router-dom";
+import FAQs from "./FAQs";
 import Graph from "./Graph";
-import { Integer } from "neo4j-driver";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Header from "./Header";
 
-const queNo = '';
+import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 const App: React.FC = () => {
+
   return (
-    <div className="App">
-      {/* <Router> */}
-        {/* <FAQs /> */}
-      {/* </Router> */}
-
-      
-      {/* <Routes>
-        <Route path="/graph/:queNo" element={<Graph queNo={queNo} />} />
-      </Routes>  */}
-
-      <Graph />
-    </div>
+    <>
+      <Header />
+      <br />
+      <br />
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            {" "}
+            <FAQs />{" "}
+          </Route>
+          <Route path="/graph/:questionNo">
+            {" "}
+            <Graph />{" "}
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 };
 
 export default App;
+
